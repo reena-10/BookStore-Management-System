@@ -1,0 +1,165 @@
+.container {
+  padding: 0 10%;
+  width: 100%;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 0;
+  gap: 50px;
+}
+
+.hero-content {
+  flex: 1.2;
+}
+.hero-content h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 25px;
+}
+
+.hero-image {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-emoji {
+  font-size: 11rem;
+  filter: drop-shadow(0 20px 40px rgba(124, 58, 237, 0.2));
+}
+
+.admin-card {
+  background: var(--bg-body);
+  border: 1px solid var(--border);
+  padding: 40px;
+  border-radius: 24px;
+  margin-bottom: 80px;
+}
+
+.admin-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.form-input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-body);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.genre-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--primary);
+  color: white;
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.book-card {
+  position: relative;
+  border: 1px solid var(--border);
+  padding: 25px;
+  border-radius: 24px;
+  background: var(--bg-card, transparent);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.book-emoji {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.book-title {
+  margin: 15px 0 5px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.book-author {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.book-footer {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-price {
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+.book-image {
+  width: 100%;
+  height: 250px; /* Aap ise apne hisab se chota-bada kar sakti hain */
+  object-fit: cover; /* Isse image stretch nahi hogi, perfect fit hogi */
+  border-radius: 16px;
+  margin-bottom: 15px;
+  background-color: #f0f0f0; /* Loading ke waqt halka grey background */
+}
+
+.book-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.cart-btn {
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.cart-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+}
+
+.loading-text {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-top: 40px;
+}
