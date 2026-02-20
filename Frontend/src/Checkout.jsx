@@ -49,7 +49,11 @@ function Checkout({
 
       const config = { headers: { Authorization: `Bearer ${userInfo.token}` } };
 
-      await axios.post("http://localhost:5000/api/orders", orderData, config);
+      await axios.post(
+        "https://bookstore-backend-5pnb.onrender.com/api/orders",
+        orderData,
+        config,
+      );
 
       setStep(3);
       clearCart();
@@ -88,7 +92,6 @@ function Checkout({
           border: "1px solid var(--border)",
         }}
       >
-        {/* STEP 1: CART ITEMS LIST */}
         {step === 1 && (
           <>
             <div

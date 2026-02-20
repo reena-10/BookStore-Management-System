@@ -18,7 +18,9 @@ function Home({ userInfo, addToCart, handleBuyNow, selectedCategory }) {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const { data } = await axios.get("http://localhost:5000/api/books");
+        const { data } = await axios.get(
+          "https://bookstore-backend-5pnb.onrender.com/api/books",
+        );
         setBooks(data);
         setLoading(false);
       } catch (err) {
@@ -33,7 +35,11 @@ function Home({ userInfo, addToCart, handleBuyNow, selectedCategory }) {
     e.preventDefault();
     try {
       const config = { headers: { Authorization: `Bearer ${userInfo.token}` } };
-      await axios.post("http://localhost:5000/api/books", newBook, config);
+      await axios.post(
+        "https://bookstore-backend-5pnb.onrender.com/api/books",
+        newBook,
+        config,
+      );
       alert("Book Added Successfully! 🎉");
       window.location.reload();
     } catch (err) {
@@ -46,7 +52,10 @@ function Home({ userInfo, addToCart, handleBuyNow, selectedCategory }) {
     if (!window.confirm("Delete this book?")) return;
     try {
       const config = { headers: { Authorization: `Bearer ${userInfo.token}` } };
-      await axios.delete(`http://localhost:5000/api/books/${id}`, config);
+      await axios.delete(
+        `https://bookstore-backend-5pnb.onrender.com/api/books/${id}`,
+        config,
+      );
       setBooks(books.filter((b) => b._id !== id));
     } catch (err) {
       console.error(err);
