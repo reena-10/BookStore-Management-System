@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://bookstore-backend-5pnb.onrender.com",
+        "https://bookstore-backend-5pnb.onrender.com/api/users/login",
         { email, password },
       );
       localStorage.setItem("userInfo", JSON.stringify(data));
