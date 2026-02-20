@@ -5,7 +5,7 @@ A full-stack **MERN** (MongoDB, Express.js, React, Node.js) application designed
 
 
 ## 🚀 Live Demo
-* **Frontend:** [https://book-store-management-system-47q4znt84-reena-10s-projects.vercel.app/](https://book-store-management-system-47q4znt84-reena-10s-projects.vercel.app/)
+* **Frontend:** [https://book-store-management-system-mu.vercel.app/](https://book-store-management-system-mu.vercel.app/)
 * **Backend API:** [https://bookstore-backend-5pnb.onrender.com](https://bookstore-backend-5pnb.onrender.com)
 
 ---
