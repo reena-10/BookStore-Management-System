@@ -5,15 +5,14 @@ import Login from "./Login";
 import Register from "./Register";
 import Checkout from "./Checkout";
 import "./App.css";
-import "./Footer.css"; // Footer CSS yahan import ki hai
+import "./Footer.css";
 
-// --- 1. FOOTER COMPONENT (Yahin par define kar diya) ---
 const Footer = () => (
   <footer className="footer">
     <div className="footer-grid">
       <div className="footer-column">
         <div className="footer-logo">
-          Cranbery<span>.</span>
+          BookBliss<span>.</span>
         </div>
         <p>Your one-stop destination for the best books across all genres.</p>
       </div>
@@ -23,18 +22,21 @@ const Footer = () => (
           <li>Science</li>
           <li>Psychology</li>
           <li>Drama</li>
+          <li>Fiction</li>
+          <li>Non-Fiction</li>
+          <li>Philosophy</li>
         </ul>
       </div>
       <div className="footer-column">
         <h4>Contact</h4>
         <ul>
-          <li>Email: support@cranbery.com</li>
+          <li>Email: support@bookbliss.com</li>
           <li>Bhopal, Madhya Pradesh</li>
         </ul>
       </div>
     </div>
     <div className="footer-bottom">
-      <p>© 2026 Cranbery Bookstore | Built for Excellence</p>
+      <p>© 2026 BookBliss Bookstore | All Rights Reserved.</p>
     </div>
   </footer>
 );
@@ -62,7 +64,6 @@ function App() {
     window.location.reload();
   };
 
-  // --- 2. REMOVE FROM CART FUNCTION (Fixes the red line error) ---
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item._id !== id));
   };
@@ -107,7 +108,7 @@ function App() {
             color: "inherit",
           }}
         >
-          Cranbery<span style={{ color: "var(--primary)" }}>.</span>
+          BookBliss<span style={{ color: "var(--primary)" }}>.</span>
         </Link>
 
         <div className="nav-right">
@@ -118,6 +119,12 @@ function App() {
                 <Link to="/" onClick={() => setSelectedCategory("All")}>
                   All Books
                 </Link>
+                <Link to="/" onClick={() => setSelectedCategory("Fiction")}>
+                  Fiction
+                </Link>
+                <Link to="/" onClick={() => setSelectedCategory("Non-Fiction")}>
+                  Non-Fiction
+                </Link>
                 <Link to="/" onClick={() => setSelectedCategory("Science")}>
                   Science
                 </Link>
@@ -126,6 +133,15 @@ function App() {
                 </Link>
                 <Link to="/" onClick={() => setSelectedCategory("Biology")}>
                   Biology
+                </Link>
+                <Link to="/" onClick={() => setSelectedCategory("Philosophy")}>
+                  Philosophy
+                </Link>
+                <Link
+                  to="/"
+                  onClick={() => setSelectedCategory("Self Development")}
+                >
+                  Self Development
                 </Link>
                 <Link to="/" onClick={() => setSelectedCategory("Drama")}>
                   Drama
@@ -220,7 +236,6 @@ function App() {
         </Routes>
       </main>
 
-      {/* NO MORE RED LINE HERE */}
       {showCheckout && (
         <Checkout
           cart={cart}

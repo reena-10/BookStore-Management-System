@@ -22,7 +22,6 @@ function Checkout({
 
   const totalPrice = cart.reduce((acc, item) => acc + Number(item.price), 0);
 
-  // Jab user order place karta hai
   const handlePlaceOrder = async (e) => {
     e.preventDefault();
     if (!userInfo) {
@@ -31,7 +30,6 @@ function Checkout({
     }
 
     try {
-      // Backend (Order.js) schema ke mutabik data format
       const orderData = {
         orderItems: cart.map((item) => ({
           name: item.title,
@@ -51,11 +49,10 @@ function Checkout({
 
       const config = { headers: { Authorization: `Bearer ${userInfo.token}` } };
 
-      // Backend mein order save karna
       await axios.post("http://localhost:5000/api/orders", orderData, config);
 
-      setStep(3); // Success Screen par bhejna
-      clearCart(); // Cart khali karna
+      setStep(3);
+      clearCart();
     } catch (err) {
       console.error(err);
       alert("Failed to place order. Check console.");
@@ -204,7 +201,6 @@ function Checkout({
           </>
         )}
 
-        {/* STEP 2: SHIPPING DETAILS FORM */}
         {step === 2 && (
           <>
             <div
@@ -365,7 +361,6 @@ function Checkout({
           </>
         )}
 
-        {/* STEP 3: ORDER CONFIRMATION */}
         {step === 3 && (
           <div style={{ textAlign: "center", padding: "30px 0" }}>
             <div style={{ fontSize: "5rem", marginBottom: "20px" }}>🎉</div>
@@ -379,8 +374,8 @@ function Checkout({
                 fontSize: "1.1rem",
               }}
             >
-              Thank you for shopping with Cranbery. Your books will be delivered
-              to your address soon.
+              Thank you for shopping with BookBliss. Your books will be
+              delivered to your address soon.
             </p>
             <button
               className="btn-primary"

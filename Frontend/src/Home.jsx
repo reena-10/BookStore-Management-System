@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Home.css";
 
-// 1. selectedCategory prop yahan receive karein
 function Home({ userInfo, addToCart, handleBuyNow, selectedCategory }) {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -54,8 +53,6 @@ function Home({ userInfo, addToCart, handleBuyNow, selectedCategory }) {
     }
   };
 
-  // --- 2. FILTER LOGIC YAHAN HAI ---
-  // Agar category "All" hai toh sab dikhao, nahi toh filter karo
   const filteredBooks =
     selectedCategory === "All"
       ? books
@@ -103,10 +100,13 @@ function Home({ userInfo, addToCart, handleBuyNow, selectedCategory }) {
               }
             >
               <option value="Fiction">Fiction</option>
+              <option value="Non-Fiction">Non-Fiction</option>
               <option value="Science">Science</option>
               <option value="Psychology">Psychology</option>
               <option value="Biology">Biology</option>
+              <option value="Philosophy">Philosophy</option>
               <option value="Drama">Drama</option>
+              <option value="Self-Development">Self-Development</option>
               <option value="Story Book">Story Book</option>
             </select>
 
@@ -144,7 +144,6 @@ function Home({ userInfo, addToCart, handleBuyNow, selectedCategory }) {
         </section>
       )}
 
-      {/* Heading bhi change hogi selection ke hisab se */}
       <h2>
         {selectedCategory === "All"
           ? "Latest Arrivals"
@@ -155,7 +154,6 @@ function Home({ userInfo, addToCart, handleBuyNow, selectedCategory }) {
         <p className="loading-text">Loading...</p>
       ) : (
         <div className="book-grid">
-          {/* --- 3. FILTERED BOOKS KO MAP KARO --- */}
           {filteredBooks.length === 0 ? (
             <p>No books found in this category.</p>
           ) : (

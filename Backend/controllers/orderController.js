@@ -12,7 +12,7 @@ const addOrderItems = async (req, res) => {
     } else {
       const order = new Order({
         orderItems,
-        user: req.user._id, // Token se aayega
+        user: req.user._id,
         shippingAddress,
         paymentMethod,
         totalPrice,

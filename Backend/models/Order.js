@@ -5,7 +5,7 @@ const orderSchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
-      ref: "User", // Yeh order kis User ka hai
+      ref: "User",
     },
     orderItems: [
       {
@@ -15,7 +15,7 @@ const orderSchema = new mongoose.Schema(
         book: {
           type: mongoose.Schema.Types.ObjectId,
           required: true,
-          ref: "Book", // Kaunsi Book order ki gayi hai
+          ref: "Book",
         },
       },
     ],

@@ -12,7 +12,6 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      // FIX: Yahan URL mein '/register' add karna zaroori tha
       const { data } = await axios.post(
         "http://localhost:5000/api/users/register",
         {
