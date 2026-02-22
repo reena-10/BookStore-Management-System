@@ -34,7 +34,7 @@ function Register() {
     <div className="auth-container">
       <div className="auth-card">
         <h2>
-          Join Cranbery<span>✦</span>
+          Join BookBliss<span>✦</span>
         </h2>
         <p>Start your journey with the best book community.</p>
         <form className="auth-form" onSubmit={handleRegister}>
