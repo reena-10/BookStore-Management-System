@@ -13,7 +13,7 @@ function Register() {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://bookstore-backend-5pnb.onrender.com/api/users",
+        "https://bookstore-backend-5pnb.onrender.com/api/users/register",
         {
           name,
           email,
