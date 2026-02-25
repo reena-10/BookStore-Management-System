@@ -72,7 +72,7 @@ function Home({ userInfo, addToCart, handleBuyNow, selectedCategory }) {
       <section className="hero">
         <div className="hero-content">
           <h1>
-            All your book <br /> collection in one <br /> platform<span>✦</span>
+            Find Your Next <br /> favorite Story Here<span>✦</span>
           </h1>
         </div>
         <div className="hero-emoji">📚</div>
